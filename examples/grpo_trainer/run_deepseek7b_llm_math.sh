@@ -9,6 +9,9 @@ math_test_path=$HOME/data/math/test.parquet
 train_files="['$gsm8k_train_path', '$math_train_path']"
 test_files="['$gsm8k_test_path', '$math_test_path']"
 
+WANDB_TOKEN="50a4ebc64391a8931933d2d62402f7cb4ee47236"
+export WANDB_API_KEY=$WANDB_TOKEN
+
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=grpo \
     data.train_files="$train_files" \
